@@ -1,0 +1,6 @@
+#Sat Oct 29 17:35:33 WAT 2016
+useAnnotationsPrefPage=true
+eclipse.preferences.version=1
+org.eclipse.php.ui.wizards.JSsupport=true
+org.eclipse.php.core.workspaceDefaultLocale=en_US
+useQuickDiffPrefPage=true

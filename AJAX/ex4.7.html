@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>What's for dinner?</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $.getJSON('fetchItemList.jsp',loadItems);
+            $('#itemsControl').change(showItemInfo);
+        });
+        function loadItems(itemList) {
+            if (!itemList) return;
+            for(var n = 0; n < itemList.length; n++) {
+                $('#itemsControl').get(0).add(
+                        new Option(itemList[n].name,itemList[n].id),
+                        document.all ? 0 : null
+                );
+            }
+        }
+        function showItemInfo() {
+            $.get('fetchItemData.jsp',
+                    {itemId: $(this).val()},
+                    function(data) {
+                        $('#itemData').empty().append(data);
+                    }
+            );
+        }
+    </script>
+</head>
+<body>
+<form style="float:left">
+    <select id="itemsControl" name="items" size="10">
+    </select>
+</form>
+<div id="itemData" style="float:left"></div>
+</body>
+</html>

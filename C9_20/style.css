@@ -1,0 +1,14 @@
+.high{
+	background-color:yellow;
+}
+
+.chosen{
+    border: 0px solid green;
+    background-color: #d1f9da;
+    color: green;
+}
+.standout{
+   color:red;
+   text-align:right;
+   font-size:20px;
+}

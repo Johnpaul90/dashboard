@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What'sfor dinner!</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#itemsControl').change(ShowItemInfo);
+        });
+        function ShowIteminfo(){
+            $('div#itemData').load('fetchItemData.jsp',{itemId: $(this).val()});
+        }
+    </script>
+    <style type="text/css">
+        form,#itemData{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <select id="itemsControl" name="items" size="10">
+        <option value="1">Milk</option>
+        <option value="2">Cole Slaw</option>
+        <option value="3">BBQ Sauce</option>
+        <option value="4">Lunch Meat</option>
+        <option value="5">Mustard</option>
+        <option value="6">Hot Sauce</option>
+        <option value="7">Cheese</option>
+        <option value="8">Iced Tea</option>
+    </select>
+</form>
+<div id="itemData"></div>
+
+</body>
+</html>
